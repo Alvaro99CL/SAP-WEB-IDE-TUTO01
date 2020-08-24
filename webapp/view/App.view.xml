@@ -91,8 +91,15 @@
 			<IconTabFilter	text="{i18n>dataBindingFilter}" key="db">
 				<content>
 					<List
-						headerText="{i18n>productListTitle}"
 						items="{/ProductSet}">
+						<headerToolbar>
+							<Toolbar>
+								<Title text = "{i18n>productListTitle}" />
+								<ToolbarSpacer />
+								<SearchField width="50%" search="onFilterProductos" />
+								
+							</Toolbar>
+						</headerToolbar>
 							<items>
 								<ObjectListItem
 									title="{Name}"
