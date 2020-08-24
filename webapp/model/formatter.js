@@ -10,11 +10,11 @@ sap.ui.define([], function() {
 				iWeight = iWeight / 1000;
 			}
 			if (iWeight < 0.5) {
-				sResult = oResourceBundle.getText("formatterMailDelivery");
+				sResult = oResourceBundle.getText("formatterMailDelivery");//formato nuevo
 			} else if (iWeight < 5) {
-				sResult = oResourceBundle.getText("formatterParcelDelivery");
+				sResult = oResourceBundle.getText("formatterParcelDelivery");//formato nuevo
 			} else {
-				sResult = oResourceBundle.getText("formatterCarrierDelivery");
+				sResult = oResourceBundle.getText("formatterCarrierDelivery");//formato nuevo
 			}
 
 			return sResult;
