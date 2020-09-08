@@ -92,7 +92,13 @@
 				<content>
 					<List
 						id="productosList"
-						items="{/ProductSet}">
+						items="{
+							path: '/ProductSet',
+							sorter : {
+								path :	'Category',
+								group : true
+							}
+						}" >
 						<headerToolbar>
 							<Toolbar>
 								<Title text = "{i18n>productListTitle}" />

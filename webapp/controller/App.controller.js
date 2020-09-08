@@ -1,11 +1,11 @@
 sap.ui.define([
 	'sap/ui/core/mvc/Controller',
 	'sap/m/MessageToast',
-	'sap/ui/model/Filter',
-	'sap/ui/model/FilterOperator',
+	"sap/ui/model/Filter",
+	"sap/ui/model/FilterOperator",
 	'opensap/myapp/model/formatter'
 	],
-	function(Controller , MessageToast , formatter, Filter, FilterOperator) {
+	function(Controller , MessageToast , Filter, FilterOperator, formatter) {
 	"use strict";
 	
 	Controller.extend("opensap.myapp.controller.App",{
@@ -24,12 +24,11 @@ sap.ui.define([
 		
 		onFiltroProductos : function( oEvent ){
 			// build filter array
-			var aFilter = [];
-			var sQuery = oEvent.getParameter("query");
+			var aFilter = [], sQuery = oEvent.getParameter("query"),
 				// retrieve list control
-			var oList = this.getView().byId("productosList");
+				oList = this.getView().byId("productosList"),
 				// get binding for aggregation 'items'
-			var oBinding = oList.getBinding("items");
+				oBinding = oList.getBinding("items");
 
 			if (sQuery) {
 				aFilter.push(new Filter("ProductID", FilterOperator.Contains, sQuery));
@@ -37,6 +36,7 @@ sap.ui.define([
 			// apply filter. an empty filter array simply removes the filter
 			// which will make all entries visible again
 			oBinding.filter(aFilter);
+
 		}
 		
 		
