@@ -91,12 +91,13 @@
 			<IconTabFilter	text="{i18n>dataBindingFilter}" key="db">
 				<content>
 					<List
+						id="productosList"
 						items="{/ProductSet}">
 						<headerToolbar>
 							<Toolbar>
 								<Title text = "{i18n>productListTitle}" />
 								<ToolbarSpacer />
-								<SearchField width="50%" search="onFilterProductos" />
+								<SearchField width="50%" search="onFiltroProductos" />
 								
 							</Toolbar>
 						</headerToolbar>
